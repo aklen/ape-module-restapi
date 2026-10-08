@@ -1,0 +1,49 @@
+{
+    "modules": {
+      "Ape.Core.Logging": {
+        "enabled": true,
+        "level": "info",
+        "transport": "console"
+      },
+      "Ape.Core.Network": {
+        "enabled": false,
+        "transport": "litenetlib",
+        "role": "server",
+        "port": 9050,
+        "peerName": "server"
+      },
+      "Ape.Module.RestApi": {
+        "plugins": {
+          "RestApi": {
+            "host": "0.0.0.0",
+            "port": 9090,
+            "corsOrigins": ["*"]
+          }
+        }
+      },
+      "Ape.Module.DiscoveryManager": {
+        "services": {
+          "Ape.Module.DiscoveryManager": {}
+        },
+        "mdns": {
+          "browseServices": ["_http._tcp"],
+          "scanSeconds": 4,
+          "pollSeconds": 12,
+          "defaultDescriptorPath": "/device.xml",
+          "filter": {
+            "locationExcludes": ["127.0.0.1", "0.0.0.0"]
+          }
+        },
+        "ssdp": {
+          "vpnUnicastProbe": {
+            "enabled": true,
+            "rewriteLocationHost": true,
+            "probeSubnets": [],
+            "extraProbeHosts": [],
+            "maxHostsPerSubnet": 254
+          }
+        }
+      }
+    }
+  }
+  

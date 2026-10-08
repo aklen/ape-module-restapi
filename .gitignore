@@ -1,0 +1,15 @@
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+/build/
+*.user
+*.suo
+.vs/
+.idea/
+.vscode/
+TestResults/
+*.nupkg
+.DS_Store
+__MACOSX/
+*~

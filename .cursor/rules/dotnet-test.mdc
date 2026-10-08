@@ -1,0 +1,32 @@
+---
+description: How to run .NET tests — quiet output, specific test project
+alwaysApply: true
+---
+
+# Running .NET tests
+
+Always run tests against the **relevant test project** `.csproj`, never the whole solution. In this repo that project is `Tests/Ape.Module.RestApi.Tests.csproj`, next to the library.
+
+Use quiet MSBuild/terminal logging so the output stays readable:
+
+```bash
+dotnet test \
+  --tl:off \
+  -clp:ErrorsOnly \
+  Tests/Ape.Module.RestApi.Tests.csproj
+```
+
+- `--tl:off` — disable the terminal logger
+- `-clp:ErrorsOnly` — MSBuild console logger, errors only
+
+To run a single test or class, add `--filter`:
+
+```bash
+dotnet test \
+  --tl:off \
+  -clp:ErrorsOnly \
+  --filter FullyQualifiedName~TypeOrMethodName \
+  Tests/Ape.Module.RestApi.Tests.csproj
+```
+
+Do not add `-v detailed`, `--logger "console;verbosity=detailed"`, or other verbose flags unless the user asks.

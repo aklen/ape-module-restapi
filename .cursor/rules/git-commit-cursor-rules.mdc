@@ -1,0 +1,29 @@
+---
+alwaysApply: true
+---
+
+Commit Messages must have a short description that is less than 50 characters followed by a newline and a more detailed description.
+- Write commit messages in English
+- Prefix the subject with a Conventional Commits type, then ": "
+- An optional scope may follow the type, as in "fix(parser): "
+- Mark a breaking change with "!" before the colon, as in "feat!: "
+- Use exactly one of these types:
+  - "feat: " — a new feature
+  - "fix: " — a bug fix
+  - "docs: " — documentation only
+  - "style: " — formatting or whitespace, no behavior change
+  - "refactor: " — a code change that neither fixes a bug nor adds a feature
+  - "perf: " — a performance improvement
+  - "test: " — adding or correcting tests
+  - "build: " — build system or dependencies
+  - "ci: " — CI configuration or scripts
+  - "chore: " — other work that does not change source or tests
+  - "revert: " — revert an earlier commit
+- Use markdown syntax
+- Write concisely using an informal tone
+- List significant changes
+- Do not use specific names or files from the code
+- Do not use phrases like "this commit", "this change", etc.
+- Sentences in the detailed description should be separated by newlines
+- Mention implications and possible usages of the code changes
+- Do not respond as code with ``` at the end of the message
